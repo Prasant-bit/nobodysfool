@@ -45,7 +45,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'protectedPage'=>[
-            \App\Http\Middleware\ageCheck::class,
+            \App\Http\Middleware\authorize::class,
         ]
     ];
 
