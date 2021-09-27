@@ -39,6 +39,10 @@ Route::view('noaccess','noaccess');
 //group middleware vaneko chai hamile particular page lai route garna sakinxa, jun pagelai garne ho tyo vitra rakhne tala ko function banayera. protectedPage chai hamile banako function ho authorize middleware ko vitra
 
 Route::group(['middleware'=>['protectedPage']], function(){
-    Route::view('home','home');
+    Route::get('/about', function(){
+        return view('about');
+    });
 
 });
+
+Route::view('home','home')->middleware('protected');
