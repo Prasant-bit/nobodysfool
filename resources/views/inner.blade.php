@@ -7,9 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <x-header componentName="User"/>
-    <h1>User page</h1>
-    @include('form')
-    @include('inner')
+    <h6>Inner Page for user</h6>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userscontroller;
+use App\Http\Controllers\logincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,13 @@ Route::get('/user', function(){
 Route::get('/about', function(){
     return view('about');
 });
+
+Route::post('/form', function(){
+    return view('form');
+});
+
+Route::get('todo',[userscontroller::class, 'overload'] );
+
+Route::post('login', [logincontroller::class, "login"]);
+Route::view('users', 'userdata');
+Route::view('noaccess','noaccess');
