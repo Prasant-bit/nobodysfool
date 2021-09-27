@@ -35,3 +35,10 @@ Route::get('todo',[userscontroller::class, 'overload'] );
 Route::post('login', [logincontroller::class, "login"]);
 Route::view('users', 'userdata');
 Route::view('noaccess','noaccess');
+
+//group middleware vaneko chai hamile particular page lai route garna sakinxa, jun pagelai garne ho tyo vitra rakhne tala ko function banayera. protectedPage chai hamile banako function ho authorize middleware ko vitra
+
+Route::group(['middleware'=>['protectedPage']], function(){
+    Route::view('home','home');
+
+});
